@@ -63,11 +63,12 @@ class CounterProvider extends InheritedWidget {
 class CounterBloc {
   int _count = 0;
 
+  //监听按钮增加的状态 改变数值
   final _counterActionController = StreamController<int>();
 
   StreamSink<int> get counter => _counterActionController.sink;
 
-  //用stream输出数据
+  //用stream输出数据  输出监听改变的值
   final _countController = StreamController<int>();
 
   Stream<int> get count => _countController.stream;
